@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:element name="FormatManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="formatId" type="xs:int" />
+        <xs:element minOccurs="0" name="formatName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="formatStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FormatManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="FormatManagementResult" nillable="true" type="q1:FormatDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FormatList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="formatId" type="xs:int" />
+        <xs:element minOccurs="0" name="formatStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FormatListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="FormatListResult" nillable="true" type="q2:FormatDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnounceManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="annId" type="xs:int" />
+        <xs:element minOccurs="0" name="annTitle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="annDesc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="annStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnounceManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AnnounceManagementResult" nillable="true" type="q3:AnnounceDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnounceList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="annId" type="xs:int" />
+        <xs:element minOccurs="0" name="annStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnounceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AnnounceListResult" nillable="true" type="q4:AnnounceDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnounceGameAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="annId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnounceGameAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AnnounceGameAddResult" nillable="true" type="q5:AnnounceGameDataAdd" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnounceGameDel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="annId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnounceGameDelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AnnounceGameDelResult" nillable="true" type="q6:AnnounceGameDataDel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnounceGameList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="annId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnounceGameListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AnnounceGameListResult" nillable="true" type="q7:AnnounceGameDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnnounceList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="annId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnnounceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAnnounceListResult" nillable="true" type="q8:GetAnnounceDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvetGameManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="adsId" type="xs:int" />
+        <xs:element minOccurs="0" name="adsName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="adsDesc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="adsImage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="adsUrl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+        <xs:element minOccurs="0" name="locatId" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="expireDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="adsStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvetGameManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AdvetGameManagementResult" nillable="true" type="q9:AdvetGameDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvertGameList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="adsId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+        <xs:element minOccurs="0" name="locatId" type="xs:int" />
+        <xs:element minOccurs="0" name="adsStat" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="adsTop" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvertGameListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AdvertGameListResult" nillable="true" type="q10:AdvetGameDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvetPositionManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+        <xs:element minOccurs="0" name="postName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvetPositionManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AdvetPositionManagementResult" nillable="true" type="q11:AdvetPositionDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvertPositionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+        <xs:element minOccurs="0" name="postStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvertPositionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AdvertPositionListResult" nillable="true" type="q12:AdvetPositionDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvetLocationManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="locatId" type="xs:int" />
+        <xs:element minOccurs="0" name="locatName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="locatStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvetLocationManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AdvetLocationManagementResult" nillable="true" type="q13:AdvetLocationDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvertLocationList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="locatId" type="xs:int" />
+        <xs:element minOccurs="0" name="locatStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdvertLocationListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AdvertLocationListResult" nillable="true" type="q14:AdvetLocationDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemMenuList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="munuParent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemMenuListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SystemMenuListResult" nillable="true" type="q15:SystemMenuDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="logDetail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userIP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="logPage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="LogAddResult" nillable="true" type="q16:LogDataAdd" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPwd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userIP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="UserLoginResult" nillable="true" type="q17:UserDataLogin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLogout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="userIP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLogoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="UserLogoutResult" nillable="true" type="q18:UserDataLogout" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPwd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="posId" type="xs:int" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element minOccurs="0" name="userStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="UserManagementResult" nillable="true" type="q19:UserDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="UserListResult" nillable="true" type="q20:UserDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPwd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ChangePassManagementResult" nillable="true" type="q21:ChangePassDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepartmentsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deptId" type="xs:int" />
+        <xs:element minOccurs="0" name="deptStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepartmentsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DepartmentsListResult" nillable="true" type="q22:DepartmentsDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepartmentsManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deptId" type="xs:int" />
+        <xs:element minOccurs="0" name="deptName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deptStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepartmentsManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DepartmentsManagementResult" nillable="true" type="q23:DepartmentsDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SectionsManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="secId" type="xs:int" />
+        <xs:element minOccurs="0" name="secName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deptId" type="xs:int" />
+        <xs:element minOccurs="0" name="secStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SectionsManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SectionsManagementResult" nillable="true" type="q24:SectionsDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SectionsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="secId" type="xs:int" />
+        <xs:element minOccurs="0" name="secStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SectionsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SectionsListResult" nillable="true" type="q25:SectionsDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="posId" type="xs:int" />
+        <xs:element minOccurs="0" name="posStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PositionsListResult" nillable="true" type="q26:PositionsDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionsManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="posId" type="xs:int" />
+        <xs:element minOccurs="0" name="posName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="posStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionsManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PositionsManagementResult" nillable="true" type="q27:PositionsDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionsStructList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="posId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionsStructListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PositionsStructListResult" nillable="true" type="q28:PositionsStructDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionsStructAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="posId" type="xs:int" />
+        <xs:element minOccurs="0" name="secStat" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionsStructAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PositionsStructAddResult" nillable="true" type="q29:PositionsStructDataAdd" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionsStructDel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="posId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionsStructDelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PositionsStructDelResult" nillable="true" type="q30:PositionsStructDataDel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolesManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element minOccurs="0" name="roleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="roleStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolesManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="RolesManagementResult" nillable="true" type="q31:RolesDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element minOccurs="0" name="roleStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="RolesListResult" nillable="true" type="q32:RolesDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GamesManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gamePrefix" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceId" type="xs:int" />
+        <xs:element minOccurs="0" name="urlLink" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gameStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GamesManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GamesManagementResult" nillable="true" type="q33:GamesDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GamesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GamesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GamesListResult" nillable="true" type="q34:GamesDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CategoriesManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cateId" type="xs:int" />
+        <xs:element minOccurs="0" name="cateName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cateDetail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cateParent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cateStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CategoriesManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="CategoriesManagementResult" nillable="true" type="q35:CategoriesDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CategoriesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cateId" type="xs:int" />
+        <xs:element minOccurs="0" name="cateStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CategoriesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="CategoriesListResult" nillable="true" type="q36:CategoriesDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SlotsManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="slotId" type="xs:int" />
+        <xs:element minOccurs="0" name="slotName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="slotDetail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="slotStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SlotsManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SlotsManagementResult" nillable="true" type="q37:SlotsDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SlotsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="slotId" type="xs:int" />
+        <xs:element minOccurs="0" name="slotStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SlotsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SlotsListResult" nillable="true" type="q38:SlotsDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostsManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+        <xs:element minOccurs="0" name="postName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postExcerpt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postContent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postThumb" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postParent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cateId" type="xs:int" />
+        <xs:element minOccurs="0" name="postFormat" type="xs:int" />
+        <xs:element minOccurs="0" name="postAuthor" type="xs:int" />
+        <xs:element minOccurs="0" name="postType" type="xs:int" />
+        <xs:element minOccurs="0" name="postStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostsManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PostsManagementResult" nillable="true" type="q39:PostsDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+        <xs:element minOccurs="0" name="postType" type="xs:int" />
+        <xs:element minOccurs="0" name="postStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PostsListResult" nillable="true" type="q40:PostsDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostGamesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostGamesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PostGamesListResult" nillable="true" type="q41:PostGamesDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostGamesAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostGamesAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PostGamesAddResult" nillable="true" type="q42:PostGamesDataAdd" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostGamesDel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostGamesDelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PostGamesDelResult" nillable="true" type="q43:PostGamesDataDel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostSlotsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostSlotsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PostSlotsListResult" nillable="true" type="q44:PostSlotsDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostSlotsAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostSlotsAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PostSlotsAddResult" nillable="true" type="q45:PostSlotsDataAdd" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostSlotsDel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostSlotsDelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="PostSlotsDelResult" nillable="true" type="q46:PostSlotsDataDel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostsSlotList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+        <xs:element minOccurs="0" name="slotId" type="xs:int" />
+        <xs:element minOccurs="0" name="cateId" type="xs:int" />
+        <xs:element minOccurs="0" name="postType" type="xs:int" />
+        <xs:element minOccurs="0" name="formatId" type="xs:int" />
+        <xs:element minOccurs="0" name="top" type="xs:int" />
+        <xs:element minOccurs="0" name="usrIp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostsSlotListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPostsSlotListResult" nillable="true" type="q47:GetPostsSlotDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postId" type="xs:int" />
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+        <xs:element minOccurs="0" name="slotId" type="xs:int" />
+        <xs:element minOccurs="0" name="cateId" type="xs:int" />
+        <xs:element minOccurs="0" name="postType" type="xs:int" />
+        <xs:element minOccurs="0" name="formatId" type="xs:int" />
+        <xs:element minOccurs="0" name="top" type="xs:int" />
+        <xs:element minOccurs="0" name="usrIp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPostsListResult" nillable="true" type="q48:GetPostsDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenusManagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="menuId" type="xs:int" />
+        <xs:element minOccurs="0" name="menuName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="menuParent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="menuURL" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="menuStyle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="menuStat" type="xs:int" />
+        <xs:element minOccurs="0" name="actionType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenusManagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="MenusManagementResult" nillable="true" type="q49:MenusDataManagement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenusList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="menuId" type="xs:int" />
+        <xs:element minOccurs="0" name="menuParent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="menuStat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenusListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="MenusListResult" nillable="true" type="q50:MenusDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuPositionsAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="menuId" type="xs:int" />
+        <xs:element minOccurs="0" name="posId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuPositionsAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="MenuPositionsAddResult" nillable="true" type="q51:MenuPositionsDataAdd" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuPositionsDel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="menuId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuPositionsDelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="MenuPositionsDelResult" nillable="true" type="q52:MenuPositionsDataDel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuPositionsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="menuId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuPositionsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="MenuPositionsListResult" nillable="true" type="q53:MenuPositionsDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuRolesAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="menuId" type="xs:int" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuRolesAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="MenuRolesAddResult" nillable="true" type="q54:MenuRolesDataAdd" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuRolesDel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="menuId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuRolesDelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="MenuRolesDelResult" nillable="true" type="q55:MenuRolesDataDel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuRolesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="menuId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuRolesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="MenuRolesListResult" nillable="true" type="q56:MenuRolesDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

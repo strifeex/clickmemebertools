@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="resetpass.aspx.cs" Inherits="resetpass" %>

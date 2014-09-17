@@ -1,0 +1,251 @@
+/* basic stylings ------------------------------------------ */
+body {
+  background: #424242;
+}
+
+.formcontainer {
+  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+  width: 330px;
+  margin: 100px auto 0;
+  display: block;
+  background: #FFF;
+  padding: 16px 16px 16px;
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  /* Firefox */
+  -webkit-animation: fadein 1s;
+  /* Safari and Chrome */
+  -o-animation: fadein 1s;
+  /* Opera */
+}
+
+.headerlogo {
+  background: url("../images/LOGO-Clickalot-horizon-compressor.png") no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 240px;
+  width: 600px;
+  margin: auto;
+}
+
+.userinfoform {
+  width: 400px;
+}
+
+.userinfoform li {
+  margin: 10px;
+}
+
+.tabletitle {
+  float: left;
+  width: 40%;
+}
+
+.tablevalues {
+  float: right;
+  width: 60%;
+  color: #53B2C8;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+h2 small {
+  font-weight: normal;
+  color: #888;
+  display: block;
+  font-size: 16px;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer a {
+  color: #53B2C8;
+}
+
+/* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.label-blue {
+  color: #424242;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #424242;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #424242;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #424242;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #424242;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #424242;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+.action_btns {
+  text-align: right;
+}
+
+button {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+  color: #03a9f4;
+  padding: 10px 10px;
+  border-radius: 2px;
+  font-size: 20px;
+  text-align: right;
+}
+
+/*fade content*/
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

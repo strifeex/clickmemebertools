@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="wsClickAlotCMS" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?xsd=xsd3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IwsClickAlotCMS_FormatManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:FormatManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_FormatManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FormatManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_FormatList_InputMessage">
+    <wsdl:part name="parameters" element="tns:FormatList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_FormatList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FormatListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AnnounceManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnnounceManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AnnounceManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnnounceManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AnnounceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnnounceList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AnnounceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnnounceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AnnounceGameAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnnounceGameAdd" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AnnounceGameAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnnounceGameAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AnnounceGameDel_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnnounceGameDel" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AnnounceGameDel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnnounceGameDelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AnnounceGameList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnnounceGameList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AnnounceGameList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnnounceGameListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_GetAnnounceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnounceList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_GetAnnounceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnnounceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvetGameManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdvetGameManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvetGameManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdvetGameManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvertGameList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdvertGameList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvertGameList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdvertGameListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvetPositionManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdvetPositionManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvetPositionManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdvetPositionManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvertPositionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdvertPositionList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvertPositionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdvertPositionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvetLocationManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdvetLocationManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvetLocationManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdvetLocationManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvertLocationList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdvertLocationList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_AdvertLocationList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdvertLocationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_SystemMenuList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemMenuList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_SystemMenuList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemMenuListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_LogAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogAdd" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_LogAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_UserLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_UserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_UserLogout_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogout" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_UserLogout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_UserManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_UserManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_UserList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_UserList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_ChangePassManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_ChangePassManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_DepartmentsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DepartmentsList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_DepartmentsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DepartmentsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_DepartmentsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:DepartmentsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_DepartmentsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DepartmentsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_SectionsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:SectionsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_SectionsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SectionsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_SectionsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SectionsList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_SectionsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SectionsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PositionsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PositionsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PositionsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PositionsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PositionsStructList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsStructList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PositionsStructList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsStructListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PositionsStructAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsStructAdd" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PositionsStructAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsStructAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PositionsStructDel_InputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsStructDel" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PositionsStructDel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsStructDelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_RolesManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:RolesManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_RolesManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RolesManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_RolesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:RolesList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_RolesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RolesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_GamesManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GamesManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_GamesManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GamesManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_GamesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GamesList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_GamesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GamesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_CategoriesManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:CategoriesManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_CategoriesManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CategoriesManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_CategoriesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CategoriesList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_CategoriesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CategoriesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_SlotsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:SlotsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_SlotsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SlotsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_SlotsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SlotsList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_SlotsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SlotsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostsManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostsManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostsManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostsManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostsList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostGamesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostGamesList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostGamesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostGamesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostGamesAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostGamesAdd" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostGamesAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostGamesAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostGamesDel_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostGamesDel" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostGamesDel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostGamesDelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostSlotsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostSlotsList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostSlotsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostSlotsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostSlotsAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostSlotsAdd" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostSlotsAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostSlotsAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostSlotsDel_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostSlotsDel" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_PostSlotsDel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostSlotsDelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_GetPostsSlotList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsSlotList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_GetPostsSlotList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsSlotListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_GetPostsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_GetPostsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenusManagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenusManagement" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenusManagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenusManagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenusList_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenusList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenusList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuPositionsAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuPositionsAdd" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuPositionsAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuPositionsAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuPositionsDel_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuPositionsDel" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuPositionsDel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuPositionsDelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuPositionsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuPositionsList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuPositionsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuPositionsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuRolesAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuRolesAdd" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuRolesAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuRolesAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuRolesDel_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuRolesDel" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuRolesDel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuRolesDelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuRolesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuRolesList" />
+  </wsdl:message>
+  <wsdl:message name="IwsClickAlotCMS_MenuRolesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuRolesListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IwsClickAlotCMS">
+    <wsdl:operation name="FormatManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/FormatManagement" message="tns:IwsClickAlotCMS_FormatManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/FormatManagementResponse" message="tns:IwsClickAlotCMS_FormatManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FormatList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/FormatList" message="tns:IwsClickAlotCMS_FormatList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/FormatListResponse" message="tns:IwsClickAlotCMS_FormatList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnnounceManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AnnounceManagement" message="tns:IwsClickAlotCMS_AnnounceManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AnnounceManagementResponse" message="tns:IwsClickAlotCMS_AnnounceManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnnounceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AnnounceList" message="tns:IwsClickAlotCMS_AnnounceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AnnounceListResponse" message="tns:IwsClickAlotCMS_AnnounceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnnounceGameAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AnnounceGameAdd" message="tns:IwsClickAlotCMS_AnnounceGameAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AnnounceGameAddResponse" message="tns:IwsClickAlotCMS_AnnounceGameAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnnounceGameDel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AnnounceGameDel" message="tns:IwsClickAlotCMS_AnnounceGameDel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AnnounceGameDelResponse" message="tns:IwsClickAlotCMS_AnnounceGameDel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnnounceGameList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AnnounceGameList" message="tns:IwsClickAlotCMS_AnnounceGameList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AnnounceGameListResponse" message="tns:IwsClickAlotCMS_AnnounceGameList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnounceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/GetAnnounceList" message="tns:IwsClickAlotCMS_GetAnnounceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/GetAnnounceListResponse" message="tns:IwsClickAlotCMS_GetAnnounceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdvetGameManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvetGameManagement" message="tns:IwsClickAlotCMS_AdvetGameManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvetGameManagementResponse" message="tns:IwsClickAlotCMS_AdvetGameManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdvertGameList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvertGameList" message="tns:IwsClickAlotCMS_AdvertGameList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvertGameListResponse" message="tns:IwsClickAlotCMS_AdvertGameList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdvetPositionManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvetPositionManagement" message="tns:IwsClickAlotCMS_AdvetPositionManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvetPositionManagementResponse" message="tns:IwsClickAlotCMS_AdvetPositionManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdvertPositionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvertPositionList" message="tns:IwsClickAlotCMS_AdvertPositionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvertPositionListResponse" message="tns:IwsClickAlotCMS_AdvertPositionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdvetLocationManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvetLocationManagement" message="tns:IwsClickAlotCMS_AdvetLocationManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvetLocationManagementResponse" message="tns:IwsClickAlotCMS_AdvetLocationManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdvertLocationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvertLocationList" message="tns:IwsClickAlotCMS_AdvertLocationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/AdvertLocationListResponse" message="tns:IwsClickAlotCMS_AdvertLocationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemMenuList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/SystemMenuList" message="tns:IwsClickAlotCMS_SystemMenuList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/SystemMenuListResponse" message="tns:IwsClickAlotCMS_SystemMenuList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/LogAdd" message="tns:IwsClickAlotCMS_LogAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/LogAddResponse" message="tns:IwsClickAlotCMS_LogAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/UserLogin" message="tns:IwsClickAlotCMS_UserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/UserLoginResponse" message="tns:IwsClickAlotCMS_UserLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/UserLogout" message="tns:IwsClickAlotCMS_UserLogout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/UserLogoutResponse" message="tns:IwsClickAlotCMS_UserLogout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/UserManagement" message="tns:IwsClickAlotCMS_UserManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/UserManagementResponse" message="tns:IwsClickAlotCMS_UserManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/UserList" message="tns:IwsClickAlotCMS_UserList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/UserListResponse" message="tns:IwsClickAlotCMS_UserList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/ChangePassManagement" message="tns:IwsClickAlotCMS_ChangePassManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/ChangePassManagementResponse" message="tns:IwsClickAlotCMS_ChangePassManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/DepartmentsList" message="tns:IwsClickAlotCMS_DepartmentsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/DepartmentsListResponse" message="tns:IwsClickAlotCMS_DepartmentsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/DepartmentsManagement" message="tns:IwsClickAlotCMS_DepartmentsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/DepartmentsManagementResponse" message="tns:IwsClickAlotCMS_DepartmentsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SectionsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/SectionsManagement" message="tns:IwsClickAlotCMS_SectionsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/SectionsManagementResponse" message="tns:IwsClickAlotCMS_SectionsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SectionsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/SectionsList" message="tns:IwsClickAlotCMS_SectionsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/SectionsListResponse" message="tns:IwsClickAlotCMS_SectionsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PositionsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PositionsList" message="tns:IwsClickAlotCMS_PositionsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PositionsListResponse" message="tns:IwsClickAlotCMS_PositionsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PositionsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PositionsManagement" message="tns:IwsClickAlotCMS_PositionsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PositionsManagementResponse" message="tns:IwsClickAlotCMS_PositionsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PositionsStructList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PositionsStructList" message="tns:IwsClickAlotCMS_PositionsStructList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PositionsStructListResponse" message="tns:IwsClickAlotCMS_PositionsStructList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PositionsStructAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PositionsStructAdd" message="tns:IwsClickAlotCMS_PositionsStructAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PositionsStructAddResponse" message="tns:IwsClickAlotCMS_PositionsStructAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PositionsStructDel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PositionsStructDel" message="tns:IwsClickAlotCMS_PositionsStructDel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PositionsStructDelResponse" message="tns:IwsClickAlotCMS_PositionsStructDel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/RolesManagement" message="tns:IwsClickAlotCMS_RolesManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/RolesManagementResponse" message="tns:IwsClickAlotCMS_RolesManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/RolesList" message="tns:IwsClickAlotCMS_RolesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/RolesListResponse" message="tns:IwsClickAlotCMS_RolesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GamesManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/GamesManagement" message="tns:IwsClickAlotCMS_GamesManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/GamesManagementResponse" message="tns:IwsClickAlotCMS_GamesManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GamesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/GamesList" message="tns:IwsClickAlotCMS_GamesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/GamesListResponse" message="tns:IwsClickAlotCMS_GamesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CategoriesManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/CategoriesManagement" message="tns:IwsClickAlotCMS_CategoriesManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/CategoriesManagementResponse" message="tns:IwsClickAlotCMS_CategoriesManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CategoriesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/CategoriesList" message="tns:IwsClickAlotCMS_CategoriesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/CategoriesListResponse" message="tns:IwsClickAlotCMS_CategoriesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SlotsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/SlotsManagement" message="tns:IwsClickAlotCMS_SlotsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/SlotsManagementResponse" message="tns:IwsClickAlotCMS_SlotsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SlotsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/SlotsList" message="tns:IwsClickAlotCMS_SlotsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/SlotsListResponse" message="tns:IwsClickAlotCMS_SlotsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostsManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostsManagement" message="tns:IwsClickAlotCMS_PostsManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostsManagementResponse" message="tns:IwsClickAlotCMS_PostsManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostsList" message="tns:IwsClickAlotCMS_PostsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostsListResponse" message="tns:IwsClickAlotCMS_PostsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostGamesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostGamesList" message="tns:IwsClickAlotCMS_PostGamesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostGamesListResponse" message="tns:IwsClickAlotCMS_PostGamesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostGamesAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostGamesAdd" message="tns:IwsClickAlotCMS_PostGamesAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostGamesAddResponse" message="tns:IwsClickAlotCMS_PostGamesAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostGamesDel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostGamesDel" message="tns:IwsClickAlotCMS_PostGamesDel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostGamesDelResponse" message="tns:IwsClickAlotCMS_PostGamesDel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSlotsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostSlotsList" message="tns:IwsClickAlotCMS_PostSlotsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostSlotsListResponse" message="tns:IwsClickAlotCMS_PostSlotsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSlotsAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostSlotsAdd" message="tns:IwsClickAlotCMS_PostSlotsAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostSlotsAddResponse" message="tns:IwsClickAlotCMS_PostSlotsAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSlotsDel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostSlotsDel" message="tns:IwsClickAlotCMS_PostSlotsDel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/PostSlotsDelResponse" message="tns:IwsClickAlotCMS_PostSlotsDel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostsSlotList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/GetPostsSlotList" message="tns:IwsClickAlotCMS_GetPostsSlotList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/GetPostsSlotListResponse" message="tns:IwsClickAlotCMS_GetPostsSlotList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/GetPostsList" message="tns:IwsClickAlotCMS_GetPostsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/GetPostsListResponse" message="tns:IwsClickAlotCMS_GetPostsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenusManagement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenusManagement" message="tns:IwsClickAlotCMS_MenusManagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenusManagementResponse" message="tns:IwsClickAlotCMS_MenusManagement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenusList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenusList" message="tns:IwsClickAlotCMS_MenusList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenusListResponse" message="tns:IwsClickAlotCMS_MenusList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuPositionsAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuPositionsAdd" message="tns:IwsClickAlotCMS_MenuPositionsAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuPositionsAddResponse" message="tns:IwsClickAlotCMS_MenuPositionsAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuPositionsDel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuPositionsDel" message="tns:IwsClickAlotCMS_MenuPositionsDel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuPositionsDelResponse" message="tns:IwsClickAlotCMS_MenuPositionsDel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuPositionsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuPositionsList" message="tns:IwsClickAlotCMS_MenuPositionsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuPositionsListResponse" message="tns:IwsClickAlotCMS_MenuPositionsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuRolesAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuRolesAdd" message="tns:IwsClickAlotCMS_MenuRolesAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuRolesAddResponse" message="tns:IwsClickAlotCMS_MenuRolesAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuRolesDel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuRolesDel" message="tns:IwsClickAlotCMS_MenuRolesDel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuRolesDelResponse" message="tns:IwsClickAlotCMS_MenuRolesDel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuRolesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuRolesList" message="tns:IwsClickAlotCMS_MenuRolesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsClickAlotCMS/MenuRolesListResponse" message="tns:IwsClickAlotCMS_MenuRolesList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IwsClickAlotCMS" type="tns:IwsClickAlotCMS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FormatManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/FormatManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormatList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/FormatList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnnounceManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AnnounceManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnnounceList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AnnounceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnnounceGameAdd">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AnnounceGameAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnnounceGameDel">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AnnounceGameDel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnnounceGameList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AnnounceGameList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnounceList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/GetAnnounceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdvetGameManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AdvetGameManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdvertGameList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AdvertGameList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdvetPositionManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AdvetPositionManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdvertPositionList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AdvertPositionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdvetLocationManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AdvetLocationManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdvertLocationList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/AdvertLocationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemMenuList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/SystemMenuList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAdd">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/LogAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/UserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogout">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/UserLogout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/UserManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/UserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/ChangePassManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentsList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/DepartmentsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentsManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/DepartmentsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SectionsManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/SectionsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SectionsList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/SectionsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PositionsList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PositionsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PositionsManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PositionsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PositionsStructList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PositionsStructList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PositionsStructAdd">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PositionsStructAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PositionsStructDel">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PositionsStructDel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/RolesManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/RolesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GamesManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/GamesManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GamesList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/GamesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CategoriesManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/CategoriesManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CategoriesList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/CategoriesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SlotsManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/SlotsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SlotsList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/SlotsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostsManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PostsManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostsList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PostsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostGamesList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PostGamesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostGamesAdd">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PostGamesAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostGamesDel">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PostGamesDel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSlotsList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PostSlotsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSlotsAdd">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PostSlotsAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSlotsDel">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/PostSlotsDel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostsSlotList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/GetPostsSlotList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostsList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/GetPostsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenusManagement">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/MenusManagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenusList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/MenusList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuPositionsAdd">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/MenuPositionsAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuPositionsDel">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/MenuPositionsDel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuPositionsList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/MenuPositionsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuRolesAdd">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/MenuRolesAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuRolesDel">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/MenuRolesDel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuRolesList">
+      <soap:operation soapAction="http://tempuri.org/IwsClickAlotCMS/MenuRolesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsClickAlotCMS">
+    <wsdl:port name="BasicHttpBinding_IwsClickAlotCMS" binding="tns:BasicHttpBinding_IwsClickAlotCMS">
+      <soap:address location="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

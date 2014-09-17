@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7258e01a-3148-4a34-83a3-ba9068023c02" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="wsClickAlotCMS.xsd" MetadataType="Schema" ID="06b2d1c6-8ee3-4b4c-a68d-6f51c503b504" SourceId="1" SourceUrl="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?xsd=xsd3" />
+    <MetadataFile FileName="wsClickAlotCMS1.xsd" MetadataType="Schema" ID="36269369-a175-4ab5-a6e9-fe1879f692e0" SourceId="1" SourceUrl="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?xsd=xsd2" />
+    <MetadataFile FileName="wsClickAlotCMS.disco" MetadataType="Disco" ID="09a563fd-50ea-4237-8f70-23c2722d6568" SourceId="1" SourceUrl="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?disco" />
+    <MetadataFile FileName="wsClickAlotCMS.wsdl" MetadataType="Wsdl" ID="cda2f984-5740-454d-815a-f1cf1071632f" SourceId="1" SourceUrl="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?wsdl" />
+    <MetadataFile FileName="wsClickAlotCMS2.xsd" MetadataType="Schema" ID="53c76e08-6e7d-4098-8e87-2cb2e0d9f27d" SourceId="1" SourceUrl="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?xsd=xsd0" />
+    <MetadataFile FileName="wsClickAlotCMS3.xsd" MetadataType="Schema" ID="3a32453a-eb88-455a-b504-f4d65370132c" SourceId="1" SourceUrl="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

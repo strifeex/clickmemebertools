@@ -1,0 +1,1539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://27.254.94.6/ClickService/ClickAlotCMSService/wsClickAlotCMS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="FormatDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FormatManageDataResult" type="tns:FormatManageDataResult" />
+      <xs:element minOccurs="0" name="formatId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormatDataManagement" nillable="true" type="tns:FormatDataManagement" />
+  <xs:simpleType name="FormatManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="FormatInfoIsEmpty" />
+      <xs:enumeration value="FormatDataIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormatManageDataResult" nillable="true" type="tns:FormatManageDataResult" />
+  <xs:complexType name="FormatDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FormatDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="FormatListResult" nillable="true" type="tns:ArrayOfFormatDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormatDataList" nillable="true" type="tns:FormatDataList" />
+  <xs:complexType name="ArrayOfFormatDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormatDataListResult" nillable="true" type="tns:FormatDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormatDataListResult" nillable="true" type="tns:ArrayOfFormatDataListResult" />
+  <xs:complexType name="FormatDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="formatId" type="xs:int" />
+      <xs:element minOccurs="0" name="formatName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormatDataListResult" nillable="true" type="tns:FormatDataListResult" />
+  <xs:complexType name="AnnounceDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnounceManageDataResult" type="tns:AnnounceManageDataResult" />
+      <xs:element minOccurs="0" name="annId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnounceDataManagement" nillable="true" type="tns:AnnounceDataManagement" />
+  <xs:simpleType name="AnnounceManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="NoticeInfoIsEmpty" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AnnounceManageDataResult" nillable="true" type="tns:AnnounceManageDataResult" />
+  <xs:complexType name="AnnounceDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnounceDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AnnounceListResult" nillable="true" type="tns:ArrayOfAnnounceDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnounceDataList" nillable="true" type="tns:AnnounceDataList" />
+  <xs:complexType name="ArrayOfAnnounceDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnnounceDataListResult" nillable="true" type="tns:AnnounceDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnnounceDataListResult" nillable="true" type="tns:ArrayOfAnnounceDataListResult" />
+  <xs:complexType name="AnnounceDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="annDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="annId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnounceDataListResult" nillable="true" type="tns:AnnounceDataListResult" />
+  <xs:complexType name="AnnounceGameDataAdd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnounceGameAddDataResult" type="tns:AnnounceGameAddDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnounceGameDataAdd" nillable="true" type="tns:AnnounceGameDataAdd" />
+  <xs:simpleType name="AnnounceGameAddDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="NoticeInfoIsEmpty" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AnnounceGameAddDataResult" nillable="true" type="tns:AnnounceGameAddDataResult" />
+  <xs:complexType name="AnnounceGameDataDel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnounceGameDelDataResult" type="tns:AnnounceGameDelDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnounceGameDataDel" nillable="true" type="tns:AnnounceGameDataDel" />
+  <xs:simpleType name="AnnounceGameDelDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="NoticeInfoIsEmpty" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AnnounceGameDelDataResult" nillable="true" type="tns:AnnounceGameDelDataResult" />
+  <xs:complexType name="AnnounceGameDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnounceGameDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AnnounceGameListResult" nillable="true" type="tns:ArrayOfAnnounceGameDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnounceGameDataList" nillable="true" type="tns:AnnounceGameDataList" />
+  <xs:complexType name="ArrayOfAnnounceGameDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnnounceGameDataListResult" nillable="true" type="tns:AnnounceGameDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnnounceGameDataListResult" nillable="true" type="tns:ArrayOfAnnounceGameDataListResult" />
+  <xs:complexType name="AnnounceGameDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="annId" type="xs:int" />
+      <xs:element minOccurs="0" name="gameId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnounceGameDataListResult" nillable="true" type="tns:AnnounceGameDataListResult" />
+  <xs:complexType name="GetAnnounceDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GetAnnounceDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="GetAnnounceListResult" nillable="true" type="tns:ArrayOfGetAnnounceDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAnnounceDataList" nillable="true" type="tns:GetAnnounceDataList" />
+  <xs:complexType name="ArrayOfGetAnnounceDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetAnnounceDataListResult" nillable="true" type="tns:GetAnnounceDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetAnnounceDataListResult" nillable="true" type="tns:ArrayOfGetAnnounceDataListResult" />
+  <xs:complexType name="GetAnnounceDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="annDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="annId" type="xs:int" />
+      <xs:element minOccurs="0" name="gameId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAnnounceDataListResult" nillable="true" type="tns:GetAnnounceDataListResult" />
+  <xs:complexType name="AdvetGameDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdvetGameManagementDataResult" type="tns:AdvetGameManagementDataResult" />
+      <xs:element minOccurs="0" name="adsId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdvetGameDataManagement" nillable="true" type="tns:AdvetGameDataManagement" />
+  <xs:simpleType name="AdvetGameManagementDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="AdvertInfoIsEmpty" />
+      <xs:enumeration value="AdvertIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdvetGameManagementDataResult" nillable="true" type="tns:AdvetGameManagementDataResult" />
+  <xs:complexType name="AdvetGameDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdvertGameDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AdvertGameListResult" nillable="true" type="tns:ArrayOfAdvertGameDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdvetGameDataList" nillable="true" type="tns:AdvetGameDataList" />
+  <xs:complexType name="ArrayOfAdvertGameDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdvertGameDataListResult" nillable="true" type="tns:AdvertGameDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdvertGameDataListResult" nillable="true" type="tns:ArrayOfAdvertGameDataListResult" />
+  <xs:complexType name="AdvertGameDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="adsId" type="xs:int" />
+      <xs:element minOccurs="0" name="adsStat" type="xs:int" />
+      <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      <xs:element minOccurs="0" name="locatId" type="xs:int" />
+      <xs:element minOccurs="0" name="postId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdvertGameDataListResult" nillable="true" type="tns:AdvertGameDataListResult" />
+  <xs:complexType name="AdvetPositionDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdvetPositionManagementDataResult" type="tns:AdvetPositionManagementDataResult" />
+      <xs:element minOccurs="0" name="postId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdvetPositionDataManagement" nillable="true" type="tns:AdvetPositionDataManagement" />
+  <xs:simpleType name="AdvetPositionManagementDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="PositionInfoIsEmpty" />
+      <xs:enumeration value="PositionIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdvetPositionManagementDataResult" nillable="true" type="tns:AdvetPositionManagementDataResult" />
+  <xs:complexType name="AdvetPositionDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdvertPositionDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AdvertPositionListResult" nillable="true" type="tns:ArrayOfAdvertPositionDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdvetPositionDataList" nillable="true" type="tns:AdvetPositionDataList" />
+  <xs:complexType name="ArrayOfAdvertPositionDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdvertPositionDataListResult" nillable="true" type="tns:AdvertPositionDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdvertPositionDataListResult" nillable="true" type="tns:ArrayOfAdvertPositionDataListResult" />
+  <xs:complexType name="AdvertPositionDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="postId" type="xs:int" />
+      <xs:element minOccurs="0" name="postName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="postStat" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdvertPositionDataListResult" nillable="true" type="tns:AdvertPositionDataListResult" />
+  <xs:complexType name="AdvetLocationDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdvetLocationManagementDataResult" type="tns:AdvetLocationManagementDataResult" />
+      <xs:element minOccurs="0" name="locatId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdvetLocationDataManagement" nillable="true" type="tns:AdvetLocationDataManagement" />
+  <xs:simpleType name="AdvetLocationManagementDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="LocationInfoIsEmpty" />
+      <xs:enumeration value="LocationIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdvetLocationManagementDataResult" nillable="true" type="tns:AdvetLocationManagementDataResult" />
+  <xs:complexType name="AdvetLocationDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdvertLocationDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AdvertLocationListResult" nillable="true" type="tns:ArrayOfAdvertLocationDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdvetLocationDataList" nillable="true" type="tns:AdvetLocationDataList" />
+  <xs:complexType name="ArrayOfAdvertLocationDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdvertLocationDataListResult" nillable="true" type="tns:AdvertLocationDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdvertLocationDataListResult" nillable="true" type="tns:ArrayOfAdvertLocationDataListResult" />
+  <xs:complexType name="AdvertLocationDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="locatId" type="xs:int" />
+      <xs:element minOccurs="0" name="locatName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="locatStat" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdvertLocationDataListResult" nillable="true" type="tns:AdvertLocationDataListResult" />
+  <xs:complexType name="SystemMenuDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SystemMenuDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="SystemMenuListResult" nillable="true" type="tns:ArrayOfSystemMenuDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SystemMenuDataList" nillable="true" type="tns:SystemMenuDataList" />
+  <xs:complexType name="ArrayOfSystemMenuDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SystemMenuDataListResult" nillable="true" type="tns:SystemMenuDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystemMenuDataListResult" nillable="true" type="tns:ArrayOfSystemMenuDataListResult" />
+  <xs:complexType name="SystemMenuDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="menuId" type="xs:int" />
+      <xs:element minOccurs="0" name="menuName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="menuParent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="menuStyle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="menuUrl" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SystemMenuDataListResult" nillable="true" type="tns:SystemMenuDataListResult" />
+  <xs:complexType name="LogDataAdd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LogResult" type="tns:LogDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogDataAdd" nillable="true" type="tns:LogDataAdd" />
+  <xs:simpleType name="LogDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="LogDataEmpty" />
+      <xs:enumeration value="TransactionError" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LogDataResult" nillable="true" type="tns:LogDataResult" />
+  <xs:complexType name="UserDataLogin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserLoginSystemResult" type="tns:UserDataLoginSystemResult" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="posId" type="xs:int" />
+      <xs:element minOccurs="0" name="roleId" type="xs:int" />
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+      <xs:element minOccurs="0" name="userMail" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDataLogin" nillable="true" type="tns:UserDataLogin" />
+  <xs:simpleType name="UserDataLoginSystemResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="UserOrPasswordIsEmpty" />
+      <xs:enumeration value="UserNotFound" />
+      <xs:enumeration value="PasswordExpired" />
+      <xs:enumeration value="SystemIsUsedByOthers" />
+      <xs:enumeration value="TransactionError" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserDataLoginSystemResult" nillable="true" type="tns:UserDataLoginSystemResult" />
+  <xs:complexType name="UserDataLogout">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserLogoutSystemResult" type="tns:UserDataLogoutSystemResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDataLogout" nillable="true" type="tns:UserDataLogout" />
+  <xs:simpleType name="UserDataLogoutSystemResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="DataEmpty" />
+      <xs:enumeration value="UserNotFound" />
+      <xs:enumeration value="TransactionError" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserDataLogoutSystemResult" nillable="true" type="tns:UserDataLogoutSystemResult" />
+  <xs:complexType name="UserDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserManageDataResult" type="tns:UserManageDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDataManagement" nillable="true" type="tns:UserDataManagement" />
+  <xs:simpleType name="UserManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="UserInfoIsEmpty" />
+      <xs:enumeration value="UserDataIsDuplicate" />
+      <xs:enumeration value="UserEmailIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserManageDataResult" nillable="true" type="tns:UserManageDataResult" />
+  <xs:complexType name="UserDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="UserListResult" nillable="true" type="tns:ArrayOfUserDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDataList" nillable="true" type="tns:UserDataList" />
+  <xs:complexType name="ArrayOfUserDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDataListResult" nillable="true" type="tns:UserDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDataListResult" nillable="true" type="tns:ArrayOfUserDataListResult" />
+  <xs:complexType name="UserDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDataListResult" nillable="true" type="tns:UserDataListResult" />
+  <xs:complexType name="ChangePassDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangePassManageDataResult" type="tns:ChangePassManageDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangePassDataManagement" nillable="true" type="tns:ChangePassDataManagement" />
+  <xs:simpleType name="ChangePassManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="UserInfoIsEmpty" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ChangePassManageDataResult" nillable="true" type="tns:ChangePassManageDataResult" />
+  <xs:complexType name="DepartmentsDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartmentsDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="DepartmentsListResult" nillable="true" type="tns:ArrayOfDepartmentsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartmentsDataList" nillable="true" type="tns:DepartmentsDataList" />
+  <xs:complexType name="ArrayOfDepartmentsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DepartmentsDataListResult" nillable="true" type="tns:DepartmentsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartmentsDataListResult" nillable="true" type="tns:ArrayOfDepartmentsDataListResult" />
+  <xs:complexType name="DepartmentsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="deptId" type="xs:int" />
+      <xs:element minOccurs="0" name="deptName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartmentsDataListResult" nillable="true" type="tns:DepartmentsDataListResult" />
+  <xs:complexType name="DepartmentsDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartmentsManageDataResult" type="tns:DepartmentsManageDataResult" />
+      <xs:element minOccurs="0" name="deptId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartmentsDataManagement" nillable="true" type="tns:DepartmentsDataManagement" />
+  <xs:simpleType name="DepartmentsManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="DepartmentInfoIsEmpty" />
+      <xs:enumeration value="DepartmentDataIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DepartmentsManageDataResult" nillable="true" type="tns:DepartmentsManageDataResult" />
+  <xs:complexType name="SectionsDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SectionsManageDataResult" type="tns:SectionsManageDataResult" />
+      <xs:element minOccurs="0" name="secId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SectionsDataManagement" nillable="true" type="tns:SectionsDataManagement" />
+  <xs:simpleType name="SectionsManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="SectionInfoIsEmpty" />
+      <xs:enumeration value="SectionDataIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SectionsManageDataResult" nillable="true" type="tns:SectionsManageDataResult" />
+  <xs:complexType name="SectionsDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SectionsDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="SectionsListResult" nillable="true" type="tns:ArrayOfSectionsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SectionsDataList" nillable="true" type="tns:SectionsDataList" />
+  <xs:complexType name="ArrayOfSectionsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SectionsDataListResult" nillable="true" type="tns:SectionsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSectionsDataListResult" nillable="true" type="tns:ArrayOfSectionsDataListResult" />
+  <xs:complexType name="SectionsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="secId" type="xs:int" />
+      <xs:element minOccurs="0" name="secName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SectionsDataListResult" nillable="true" type="tns:SectionsDataListResult" />
+  <xs:complexType name="PositionsDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PositionsDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PositionsListResult" nillable="true" type="tns:ArrayOfPositionsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PositionsDataList" nillable="true" type="tns:PositionsDataList" />
+  <xs:complexType name="ArrayOfPositionsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PositionsDataListResult" nillable="true" type="tns:PositionsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPositionsDataListResult" nillable="true" type="tns:ArrayOfPositionsDataListResult" />
+  <xs:complexType name="PositionsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="posId" type="xs:int" />
+      <xs:element minOccurs="0" name="posName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PositionsDataListResult" nillable="true" type="tns:PositionsDataListResult" />
+  <xs:complexType name="PositionsDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PositionsManageDataResult" type="tns:PositionsManageDataResult" />
+      <xs:element minOccurs="0" name="posId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PositionsDataManagement" nillable="true" type="tns:PositionsDataManagement" />
+  <xs:simpleType name="PositionsManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="PositionInfoIsEmpty" />
+      <xs:enumeration value="PositionDataIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PositionsManageDataResult" nillable="true" type="tns:PositionsManageDataResult" />
+  <xs:complexType name="PositionsStructDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PositionsStructDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PositionsStructListResult" nillable="true" type="tns:ArrayOfPositionsStructDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PositionsStructDataList" nillable="true" type="tns:PositionsStructDataList" />
+  <xs:complexType name="ArrayOfPositionsStructDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PositionsStructDataListResult" nillable="true" type="tns:PositionsStructDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPositionsStructDataListResult" nillable="true" type="tns:ArrayOfPositionsStructDataListResult" />
+  <xs:complexType name="PositionsStructDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="posId" type="xs:int" />
+      <xs:element minOccurs="0" name="secId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PositionsStructDataListResult" nillable="true" type="tns:PositionsStructDataListResult" />
+  <xs:complexType name="PositionsStructDataAdd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PositionsStructAddDataResult" type="tns:PositionsStructAddDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PositionsStructDataAdd" nillable="true" type="tns:PositionsStructDataAdd" />
+  <xs:simpleType name="PositionsStructAddDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="PositionInfoIsEmpty" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PositionsStructAddDataResult" nillable="true" type="tns:PositionsStructAddDataResult" />
+  <xs:complexType name="PositionsStructDataDel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PositionsStructDelDataResult" type="tns:PositionsStructDelDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PositionsStructDataDel" nillable="true" type="tns:PositionsStructDataDel" />
+  <xs:simpleType name="PositionsStructDelDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="PositionInfoIsEmpty" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PositionsStructDelDataResult" nillable="true" type="tns:PositionsStructDelDataResult" />
+  <xs:complexType name="RolesDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RolesManageDataResult" type="tns:RolesManageDataResult" />
+      <xs:element minOccurs="0" name="roleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RolesDataManagement" nillable="true" type="tns:RolesDataManagement" />
+  <xs:simpleType name="RolesManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="RoleInfoIsEmpty" />
+      <xs:enumeration value="RoleDataIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RolesManageDataResult" nillable="true" type="tns:RolesManageDataResult" />
+  <xs:complexType name="RolesDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RolesDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="RolesListResult" nillable="true" type="tns:ArrayOfRolesDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RolesDataList" nillable="true" type="tns:RolesDataList" />
+  <xs:complexType name="ArrayOfRolesDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolesDataListResult" nillable="true" type="tns:RolesDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRolesDataListResult" nillable="true" type="tns:ArrayOfRolesDataListResult" />
+  <xs:complexType name="RolesDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="roleId" type="xs:int" />
+      <xs:element minOccurs="0" name="roleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RolesDataListResult" nillable="true" type="tns:RolesDataListResult" />
+  <xs:complexType name="GamesDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GamesManageDataResult" type="tns:GamesManageDataResult" />
+      <xs:element minOccurs="0" name="gameId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GamesDataManagement" nillable="true" type="tns:GamesDataManagement" />
+  <xs:simpleType name="GamesManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="GameInfoIsEmpty" />
+      <xs:enumeration value="GameDataIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GamesManageDataResult" nillable="true" type="tns:GamesManageDataResult" />
+  <xs:complexType name="GamesDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GamesDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="GamesListResult" nillable="true" type="tns:ArrayOfGamesDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GamesDataList" nillable="true" type="tns:GamesDataList" />
+  <xs:complexType name="ArrayOfGamesDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GamesDataListResult" nillable="true" type="tns:GamesDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGamesDataListResult" nillable="true" type="tns:ArrayOfGamesDataListResult" />
+  <xs:complexType name="GamesDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      <xs:element minOccurs="0" name="gameName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gamePrefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="serviceId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GamesDataListResult" nillable="true" type="tns:GamesDataListResult" />
+  <xs:complexType name="CategoriesDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoriesManageDataResult" type="tns:CategoriesManageDataResult" />
+      <xs:element minOccurs="0" name="cateId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoriesDataManagement" nillable="true" type="tns:CategoriesDataManagement" />
+  <xs:simpleType name="CategoriesManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="CategoryInfoIsEmpty" />
+      <xs:enumeration value="CategoryDataIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CategoriesManageDataResult" nillable="true" type="tns:CategoriesManageDataResult" />
+  <xs:complexType name="CategoriesDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoriesDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="CategoriesListResult" nillable="true" type="tns:ArrayOfCategoriesDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoriesDataList" nillable="true" type="tns:CategoriesDataList" />
+  <xs:complexType name="ArrayOfCategoriesDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoriesDataListResult" nillable="true" type="tns:CategoriesDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoriesDataListResult" nillable="true" type="tns:ArrayOfCategoriesDataListResult" />
+  <xs:complexType name="CategoriesDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cateId" type="xs:int" />
+      <xs:element minOccurs="0" name="cateLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cateParent" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoriesDataListResult" nillable="true" type="tns:CategoriesDataListResult" />
+  <xs:complexType name="SlotsDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SlotsManageDataResult" type="tns:SlotsManageDataResult" />
+      <xs:element minOccurs="0" name="slotId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SlotsDataManagement" nillable="true" type="tns:SlotsDataManagement" />
+  <xs:simpleType name="SlotsManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="SlotInfoIsEmpty" />
+      <xs:enumeration value="SlotDataIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SlotsManageDataResult" nillable="true" type="tns:SlotsManageDataResult" />
+  <xs:complexType name="SlotsDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SlotsDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="SlotsListResult" nillable="true" type="tns:ArrayOfSlotsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SlotsDataList" nillable="true" type="tns:SlotsDataList" />
+  <xs:complexType name="ArrayOfSlotsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SlotsDataListResult" nillable="true" type="tns:SlotsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSlotsDataListResult" nillable="true" type="tns:ArrayOfSlotsDataListResult" />
+  <xs:complexType name="SlotsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="slotId" type="xs:int" />
+      <xs:element minOccurs="0" name="slotName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SlotsDataListResult" nillable="true" type="tns:SlotsDataListResult" />
+  <xs:complexType name="PostsDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PostsManageDataResult" type="tns:PostsManageDataResult" />
+      <xs:element minOccurs="0" name="postId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostsDataManagement" nillable="true" type="tns:PostsDataManagement" />
+  <xs:simpleType name="PostsManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="PostInfoIsEmpty" />
+      <xs:enumeration value="PostDataIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PostsManageDataResult" nillable="true" type="tns:PostsManageDataResult" />
+  <xs:complexType name="PostsDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PostsDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PostsListResult" nillable="true" type="tns:ArrayOfPostsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostsDataList" nillable="true" type="tns:PostsDataList" />
+  <xs:complexType name="ArrayOfPostsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PostsDataListResult" nillable="true" type="tns:PostsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPostsDataListResult" nillable="true" type="tns:ArrayOfPostsDataListResult" />
+  <xs:complexType name="PostsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="postId" type="xs:int" />
+      <xs:element minOccurs="0" name="postLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="postName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="postParent" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostsDataListResult" nillable="true" type="tns:PostsDataListResult" />
+  <xs:complexType name="PostGamesDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PostGamesDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PostGamesListResult" nillable="true" type="tns:ArrayOfPostGamesDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostGamesDataList" nillable="true" type="tns:PostGamesDataList" />
+  <xs:complexType name="ArrayOfPostGamesDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PostGamesDataListResult" nillable="true" type="tns:PostGamesDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPostGamesDataListResult" nillable="true" type="tns:ArrayOfPostGamesDataListResult" />
+  <xs:complexType name="PostGamesDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      <xs:element minOccurs="0" name="postId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostGamesDataListResult" nillable="true" type="tns:PostGamesDataListResult" />
+  <xs:complexType name="PostGamesDataAdd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PostGamesAddDataResult" type="tns:PostGamesAddDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostGamesDataAdd" nillable="true" type="tns:PostGamesDataAdd" />
+  <xs:simpleType name="PostGamesAddDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="PostInfoIsEmpty" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PostGamesAddDataResult" nillable="true" type="tns:PostGamesAddDataResult" />
+  <xs:complexType name="PostGamesDataDel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PostGamesDelDataResult" type="tns:PostGamesDelDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostGamesDataDel" nillable="true" type="tns:PostGamesDataDel" />
+  <xs:simpleType name="PostGamesDelDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="PostInfoIsEmpty" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PostGamesDelDataResult" nillable="true" type="tns:PostGamesDelDataResult" />
+  <xs:complexType name="PostSlotsDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PostSlotsDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PostSlotsListResult" nillable="true" type="tns:ArrayOfPostSlotsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostSlotsDataList" nillable="true" type="tns:PostSlotsDataList" />
+  <xs:complexType name="ArrayOfPostSlotsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PostSlotsDataListResult" nillable="true" type="tns:PostSlotsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPostSlotsDataListResult" nillable="true" type="tns:ArrayOfPostSlotsDataListResult" />
+  <xs:complexType name="PostSlotsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="postId" type="xs:int" />
+      <xs:element minOccurs="0" name="slotId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostSlotsDataListResult" nillable="true" type="tns:PostSlotsDataListResult" />
+  <xs:complexType name="PostSlotsDataAdd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PostSlotsAddDataResult" type="tns:PostSlotsAddDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostSlotsDataAdd" nillable="true" type="tns:PostSlotsDataAdd" />
+  <xs:simpleType name="PostSlotsAddDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="PostInfoIsEmpty" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PostSlotsAddDataResult" nillable="true" type="tns:PostSlotsAddDataResult" />
+  <xs:complexType name="PostSlotsDataDel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PostSlotsDelDataResult" type="tns:PostSlotsDelDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostSlotsDataDel" nillable="true" type="tns:PostSlotsDataDel" />
+  <xs:simpleType name="PostSlotsDelDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="PostInfoIsEmpty" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PostSlotsDelDataResult" nillable="true" type="tns:PostSlotsDelDataResult" />
+  <xs:complexType name="GetPostsSlotDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GetPostsSlotDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="GetPostsSlotListResult" nillable="true" type="tns:ArrayOfGetPostsSlotDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPostsSlotDataList" nillable="true" type="tns:GetPostsSlotDataList" />
+  <xs:complexType name="ArrayOfGetPostsSlotDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetPostsSlotDataListResult" nillable="true" type="tns:GetPostsSlotDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetPostsSlotDataListResult" nillable="true" type="tns:ArrayOfGetPostsSlotDataListResult" />
+  <xs:complexType name="GetPostsSlotDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cateId" type="xs:int" />
+      <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      <xs:element minOccurs="0" name="postId" type="xs:int" />
+      <xs:element minOccurs="0" name="slotId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPostsSlotDataListResult" nillable="true" type="tns:GetPostsSlotDataListResult" />
+  <xs:complexType name="GetPostsDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GetPostsDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="GetPostsListResult" nillable="true" type="tns:ArrayOfGetPostsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPostsDataList" nillable="true" type="tns:GetPostsDataList" />
+  <xs:complexType name="ArrayOfGetPostsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetPostsDataListResult" nillable="true" type="tns:GetPostsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetPostsDataListResult" nillable="true" type="tns:ArrayOfGetPostsDataListResult" />
+  <xs:complexType name="GetPostsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cateId" type="xs:int" />
+      <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      <xs:element minOccurs="0" name="postId" type="xs:int" />
+      <xs:element minOccurs="0" name="slotId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPostsDataListResult" nillable="true" type="tns:GetPostsDataListResult" />
+  <xs:complexType name="MenusDataManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MenusManageDataResult" type="tns:MenusManageDataResult" />
+      <xs:element minOccurs="0" name="menuId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenusDataManagement" nillable="true" type="tns:MenusDataManagement" />
+  <xs:simpleType name="MenusManageDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ActionTypeIsEmpty" />
+      <xs:enumeration value="MenuInfoIsEmpty" />
+      <xs:enumeration value="MenuDataIsDuplicate" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MenusManageDataResult" nillable="true" type="tns:MenusManageDataResult" />
+  <xs:complexType name="MenusDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MenusDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="MenusListResult" nillable="true" type="tns:ArrayOfMenusDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenusDataList" nillable="true" type="tns:MenusDataList" />
+  <xs:complexType name="ArrayOfMenusDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MenusDataListResult" nillable="true" type="tns:MenusDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMenusDataListResult" nillable="true" type="tns:ArrayOfMenusDataListResult" />
+  <xs:complexType name="MenusDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="menuId" type="xs:int" />
+      <xs:element minOccurs="0" name="menuName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenusDataListResult" nillable="true" type="tns:MenusDataListResult" />
+  <xs:complexType name="MenuPositionsDataAdd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MenuPositionsAddDataResult" type="tns:MenuPositionsAddDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuPositionsDataAdd" nillable="true" type="tns:MenuPositionsDataAdd" />
+  <xs:simpleType name="MenuPositionsAddDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="MenuInfoIsEmpty" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MenuPositionsAddDataResult" nillable="true" type="tns:MenuPositionsAddDataResult" />
+  <xs:complexType name="MenuPositionsDataDel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MenuPositionsDelDataResult" type="tns:MenuPositionsDelDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuPositionsDataDel" nillable="true" type="tns:MenuPositionsDataDel" />
+  <xs:simpleType name="MenuPositionsDelDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="MenuInfoIsEmpty" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MenuPositionsDelDataResult" nillable="true" type="tns:MenuPositionsDelDataResult" />
+  <xs:complexType name="MenuPositionsDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MenuPositionsDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="MenuPositionsListResult" nillable="true" type="tns:ArrayOfMenuPositionsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuPositionsDataList" nillable="true" type="tns:MenuPositionsDataList" />
+  <xs:complexType name="ArrayOfMenuPositionsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MenuPositionsDataListResult" nillable="true" type="tns:MenuPositionsDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMenuPositionsDataListResult" nillable="true" type="tns:ArrayOfMenuPositionsDataListResult" />
+  <xs:complexType name="MenuPositionsDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="menuId" type="xs:int" />
+      <xs:element minOccurs="0" name="posId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuPositionsDataListResult" nillable="true" type="tns:MenuPositionsDataListResult" />
+  <xs:complexType name="MenuRolesDataAdd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MenuRolesAddDataResult" type="tns:MenuRolesAddDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuRolesDataAdd" nillable="true" type="tns:MenuRolesDataAdd" />
+  <xs:simpleType name="MenuRolesAddDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="MenuInfoIsEmpty" />
+      <xs:enumeration value="SQLTransectionError" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MenuRolesAddDataResult" nillable="true" type="tns:MenuRolesAddDataResult" />
+  <xs:complexType name="MenuRolesDataDel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MenuRolesDelDataResult" type="tns:MenuRolesDelDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuRolesDataDel" nillable="true" type="tns:MenuRolesDataDel" />
+  <xs:simpleType name="MenuRolesDelDataResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="MenuInfoIsEmpty" />
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MenuRolesDelDataResult" nillable="true" type="tns:MenuRolesDelDataResult" />
+  <xs:complexType name="MenuRolesDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MenuRolesDataListResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="MenuRolesListResult" nillable="true" type="tns:ArrayOfMenuRolesDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuRolesDataList" nillable="true" type="tns:MenuRolesDataList" />
+  <xs:complexType name="ArrayOfMenuRolesDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MenuRolesDataListResult" nillable="true" type="tns:MenuRolesDataListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMenuRolesDataListResult" nillable="true" type="tns:ArrayOfMenuRolesDataListResult" />
+  <xs:complexType name="MenuRolesDataListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="menuId" type="xs:int" />
+      <xs:element minOccurs="0" name="roleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuRolesDataListResult" nillable="true" type="tns:MenuRolesDataListResult" />
+</xs:schema>
