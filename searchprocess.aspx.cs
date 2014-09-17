@@ -11,10 +11,8 @@ public partial class searchprocess : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //int cmsId = Convert.ToInt32(MISCoreLibrary.ClsDecrypt.DecryptSTD(((Authensession)(Session["UserLoginSys"])).userAccId, "GjrAIdzK97quE67Pho3pBhpV6VPP72hB", "OI1miOctWpPCvOu9"));
-        //string cmsName = ((Authensession)(Session["UserLoginSys"])).userAccName;
         string username = Request.Params["searchUsername"];
-        //string userIP = Request.UserHostAddress;
+
         string responesStat = "";
 
 

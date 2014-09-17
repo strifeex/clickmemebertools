@@ -21,7 +21,7 @@ public partial class _Default : System.Web.UI.Page
 
         result += "<li><a class='" + "gn-icon gn-icon-cog" + "' onclick='" + "RenewMenu()" + "'>ReNew Password</a></li>" +
          "<li><a class='" + "gn-icon gn-icon-help" + "' onclick='" + "RollbackMenu()" + "'>RollBack Password</a></li>"+
-         "<li><a class='" + "gn-icon gn-icon-article" + "' onclick='" + "" + "'>User Privileges</a></li>";
+         "<li><a class='" + "gn-icon gn-icon-article" + "' onclick='" + "UserCMSList()" + "'>User Privileges</a></li>";
 
         //if ((cmsId != 11) && (cmsId != 13))
         //{

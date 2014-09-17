@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ClickMemberLogin_test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClickMemberLogin_testResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClickMemberLogin_testResult" type="tns:ClickMemberDataList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClickMemberDataList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClickMemberDataListResult">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="ClickMemberListResult" type="tns:ArrayOfClickMemberDataListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClickMemberDataListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClickMemberDataListResult" nillable="true" type="tns:ClickMemberDataListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClickMemberDataListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="memberId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="memberUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="memberEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="memberPassword" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMemberProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberProfileResult" type="tns:ClickMemberProfileDataList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClickMemberProfileDataList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClickMemberProfileDataListResult">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="ClickMemberProfileListResult" type="tns:ArrayOfClickMemberProfileDataListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClickMemberProfileDataListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClickMemberProfileDataListResult" nillable="true" type="tns:ClickMemberProfileDataListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClickMemberProfileDataListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CrearteOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastLogin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="id_number" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMemberPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberPasswordResult" type="tns:ClickPasswordDataList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClickPasswordDataList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClickPasswordDataListResult">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="ClickPasswordListResult" type="tns:ArrayOfClickPasswordDataListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClickPasswordDataListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClickPasswordDataListResult" nillable="true" type="tns:ClickPasswordDataListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClickPasswordDataListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="memberId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="memberPassword" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logAction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logDetail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logPage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogAddResult" type="tns:LogDataAdd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LogDataAdd">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LogResult" type="tns:LogDataResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LogDataResult">
+        <s:restriction base="s:string">
+          <s:enumeration value="Success" />
+          <s:enumeration value="LogDataEmpty" />
+          <s:enumeration value="TransactionError" />
+          <s:enumeration value="Other" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetBackupPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clickalotId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBackupPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBackupPasswordResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ClickMemberPasswordBackup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clickalotId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="backupPass" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cmsId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cmsUsername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClickMemberPasswordBackupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClickMemberPasswordBackupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClickMemberPasswordRollbackComplete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clickalotId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cmsId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cmsUsername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClickMemberPasswordRollbackCompleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClickMemberPasswordRollbackCompleteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClickMemberRenewPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="renewpassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClickMemberRenewPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClickMemberRenewPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClickMemberSetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClickMemberSetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClickMemberSetPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberToolsPrivillegeAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cmsId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberToolsPrivillegeAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberToolsPrivillegeAddResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCMSList">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserCMSListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserCMSListResult" type="tns:UserCMSDataList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserCMSDataList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserCMSDataListResult">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="UserCMSListResult" type="tns:ArrayOfUserCMSDataListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUserCMSDataListResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserCMSDataListResult" nillable="true" type="tns:UserCMSDataListResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserCMSDataListResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="No" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="userPwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ClickMemberLogin_testSoapIn">
+    <wsdl:part name="parameters" element="tns:ClickMemberLogin_test" />
+  </wsdl:message>
+  <wsdl:message name="ClickMemberLogin_testSoapOut">
+    <wsdl:part name="parameters" element="tns:ClickMemberLogin_testResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberProfile" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogAddSoapIn">
+    <wsdl:part name="parameters" element="tns:LogAdd" />
+  </wsdl:message>
+  <wsdl:message name="LogAddSoapOut">
+    <wsdl:part name="parameters" element="tns:LogAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBackupPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBackupPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetBackupPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBackupPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClickMemberPasswordBackupSoapIn">
+    <wsdl:part name="parameters" element="tns:ClickMemberPasswordBackup" />
+  </wsdl:message>
+  <wsdl:message name="ClickMemberPasswordBackupSoapOut">
+    <wsdl:part name="parameters" element="tns:ClickMemberPasswordBackupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClickMemberPasswordRollbackCompleteSoapIn">
+    <wsdl:part name="parameters" element="tns:ClickMemberPasswordRollbackComplete" />
+  </wsdl:message>
+  <wsdl:message name="ClickMemberPasswordRollbackCompleteSoapOut">
+    <wsdl:part name="parameters" element="tns:ClickMemberPasswordRollbackCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClickMemberRenewPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ClickMemberRenewPassword" />
+  </wsdl:message>
+  <wsdl:message name="ClickMemberRenewPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ClickMemberRenewPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClickMemberSetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ClickMemberSetPassword" />
+  </wsdl:message>
+  <wsdl:message name="ClickMemberSetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ClickMemberSetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberToolsPrivillegeAddSoapIn">
+    <wsdl:part name="parameters" element="tns:MemberToolsPrivillegeAdd" />
+  </wsdl:message>
+  <wsdl:message name="MemberToolsPrivillegeAddSoapOut">
+    <wsdl:part name="parameters" element="tns:MemberToolsPrivillegeAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCMSListSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCMSList" />
+  </wsdl:message>
+  <wsdl:message name="UserCMSListSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCMSListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClickMemberToolsServiceSoap">
+    <wsdl:operation name="ClickMemberLogin_test">
+      <wsdl:input message="tns:ClickMemberLogin_testSoapIn" />
+      <wsdl:output message="tns:ClickMemberLogin_testSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberProfile">
+      <wsdl:input message="tns:GetMemberProfileSoapIn" />
+      <wsdl:output message="tns:GetMemberProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberPassword">
+      <wsdl:input message="tns:GetMemberPasswordSoapIn" />
+      <wsdl:output message="tns:GetMemberPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogAdd">
+      <wsdl:input message="tns:LogAddSoapIn" />
+      <wsdl:output message="tns:LogAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBackupPassword">
+      <wsdl:input message="tns:GetBackupPasswordSoapIn" />
+      <wsdl:output message="tns:GetBackupPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberPasswordBackup">
+      <wsdl:input message="tns:ClickMemberPasswordBackupSoapIn" />
+      <wsdl:output message="tns:ClickMemberPasswordBackupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberPasswordRollbackComplete">
+      <wsdl:input message="tns:ClickMemberPasswordRollbackCompleteSoapIn" />
+      <wsdl:output message="tns:ClickMemberPasswordRollbackCompleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberRenewPassword">
+      <wsdl:input message="tns:ClickMemberRenewPasswordSoapIn" />
+      <wsdl:output message="tns:ClickMemberRenewPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberSetPassword">
+      <wsdl:input message="tns:ClickMemberSetPasswordSoapIn" />
+      <wsdl:output message="tns:ClickMemberSetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberToolsPrivillegeAdd">
+      <wsdl:input message="tns:MemberToolsPrivillegeAddSoapIn" />
+      <wsdl:output message="tns:MemberToolsPrivillegeAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCMSList">
+      <wsdl:input message="tns:UserCMSListSoapIn" />
+      <wsdl:output message="tns:UserCMSListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClickMemberToolsServiceSoap" type="tns:ClickMemberToolsServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ClickMemberLogin_test">
+      <soap:operation soapAction="http://tempuri.org/ClickMemberLogin_test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberProfile">
+      <soap:operation soapAction="http://tempuri.org/GetMemberProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberPassword">
+      <soap:operation soapAction="http://tempuri.org/GetMemberPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAdd">
+      <soap:operation soapAction="http://tempuri.org/LogAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBackupPassword">
+      <soap:operation soapAction="http://tempuri.org/GetBackupPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberPasswordBackup">
+      <soap:operation soapAction="http://tempuri.org/ClickMemberPasswordBackup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberPasswordRollbackComplete">
+      <soap:operation soapAction="http://tempuri.org/ClickMemberPasswordRollbackComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberRenewPassword">
+      <soap:operation soapAction="http://tempuri.org/ClickMemberRenewPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberSetPassword">
+      <soap:operation soapAction="http://tempuri.org/ClickMemberSetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberToolsPrivillegeAdd">
+      <soap:operation soapAction="http://tempuri.org/MemberToolsPrivillegeAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCMSList">
+      <soap:operation soapAction="http://tempuri.org/UserCMSList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClickMemberToolsServiceSoap12" type="tns:ClickMemberToolsServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ClickMemberLogin_test">
+      <soap12:operation soapAction="http://tempuri.org/ClickMemberLogin_test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberProfile">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberPassword">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAdd">
+      <soap12:operation soapAction="http://tempuri.org/LogAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBackupPassword">
+      <soap12:operation soapAction="http://tempuri.org/GetBackupPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberPasswordBackup">
+      <soap12:operation soapAction="http://tempuri.org/ClickMemberPasswordBackup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberPasswordRollbackComplete">
+      <soap12:operation soapAction="http://tempuri.org/ClickMemberPasswordRollbackComplete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberRenewPassword">
+      <soap12:operation soapAction="http://tempuri.org/ClickMemberRenewPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClickMemberSetPassword">
+      <soap12:operation soapAction="http://tempuri.org/ClickMemberSetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberToolsPrivillegeAdd">
+      <soap12:operation soapAction="http://tempuri.org/MemberToolsPrivillegeAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCMSList">
+      <soap12:operation soapAction="http://tempuri.org/UserCMSList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClickMemberToolsService">
+    <wsdl:port name="ClickMemberToolsServiceSoap" binding="tns:ClickMemberToolsServiceSoap">
+      <soap:address location="http://localhost:8732/clickMemberToolsService/ClickMemberToolsService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClickMemberToolsServiceSoap12" binding="tns:ClickMemberToolsServiceSoap12">
+      <soap12:address location="http://localhost:8732/clickMemberToolsService/ClickMemberToolsService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -25,7 +25,7 @@
       <form>
     
         <div class="group">      
-          <input id="searchUsername" type="text" onkeypress="return isSingleQuoteKey(event)" onkeydown="return noCopyKey(event);" onmousedown="return noCopyMouse(event);" onpaste="return false" required>
+          <input id="searchUsername" type="text" onkeypress="return isSingleQuoteKey(event)" <%--onkeydown="return noCopyKey(event);" onmousedown="return noCopyMouse(event);" onpaste="return false"--%> required>
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Username Or Email</label>
@@ -81,7 +81,7 @@
       <form>
     
         <div class="group">      
-          <input id="re_clickId" type="text" onkeypress="return isSingleQuoteKey(event)" onkeydown="return noCopyKey(event);" onmousedown="return noCopyMouse(event);" onpaste="return false" required>
+          <input id="re_clickId" type="text" onkeypress="return isSingleQuoteKey(event)" <%--onkeydown="return noCopyKey(event);" onmousedown="return noCopyMouse(event);" onpaste="return false"--%> required>
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>UserName</label>
@@ -143,7 +143,7 @@
                    <li>ID NUMBER</li>
                    <li>LAST LOGIN</li>
             </ul>
-            <ul class="tablevalues" id="Ul1">
+            <ul class="tablevalues">
                    <li>USERNAME</li>
                    <li>EMAIL</li>
                    <li>FIRSTNAME</li>
@@ -170,7 +170,7 @@
 					<nav class="gn-menu-wrapper">
 						<div class="gn-scroller">
 							<ul class="gn-menu" id="sidemenu" runat="server">
-<%--                                <li><a class="gn-icon gn-icon-search" onclick="SearchMenu()">Search</a></li>
+<%--                            <li><a class="gn-icon gn-icon-search" onclick="SearchMenu()">Search</a></li>
 								<li><a class="gn-icon gn-icon-cog" onclick="RenewMenu()">ReNew Password</a></li>
 								<li><a class="gn-icon gn-icon-help" onclick="RollbackMenu()">RollBack Password</a></li>--%>
 							</ul>
@@ -305,6 +305,29 @@
                 }, "json");
             }
 
+
+            function UserCMSList() {
+
+                var ListParams = {};
+
+                ListParams['ListParams'] = "";
+
+                $.post("userlistprocess.aspx", ListParams,
+                function (data, status) {
+
+                    if (data.length > 0) {
+
+                        //                        $('.userinfoform').show();
+                        alert("found");
+
+                    }
+                    else {
+//                        $('.userinfoform').hide();
+                        alert("username not found");
+                    }
+
+                }, "json");
+            }
 
             function RenewMenu() {
                 $('.searchform').hide();

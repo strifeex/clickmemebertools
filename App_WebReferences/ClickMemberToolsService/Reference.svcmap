@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://27.254.94.6/ClickService/clickMemberToolsService/ClickMemberToolsService.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8732/clickMemberToolsService/ClickMemberToolsService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ClickMemberToolsService.wsdl" MetadataType="Wsdl" ID="39765e77-443e-445b-9668-047ca8737bc8" SourceId="1" SourceUrl="http://27.254.94.6/ClickService/clickMemberToolsService/ClickMemberToolsService.asmx?wsdl" />
-    <MetadataFile FileName="ClickMemberToolsService.disco" MetadataType="Disco" ID="ccd62589-7722-4370-a4cc-2c73c901b9d0" SourceId="1" SourceUrl="http://27.254.94.6/ClickService/clickMemberToolsService/ClickMemberToolsService.asmx?disco" />
+    <MetadataFile FileName="ClickMemberToolsService1.disco" MetadataType="Disco" ID="20daaf03-3af9-432c-964d-85f88c9357ca" SourceId="1" SourceUrl="http://localhost:8732/clickMemberToolsService/ClickMemberToolsService.asmx?disco" />
+    <MetadataFile FileName="ClickMemberToolsService1.wsdl" MetadataType="Wsdl" ID="3c698797-11cf-4cf1-a465-ffa5b9cf2189" SourceId="1" SourceUrl="http://localhost:8732/clickMemberToolsService/ClickMemberToolsService.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -47,6 +47,10 @@ body {
   color: #53B2C8;
 }
 
+.Userlist {
+  width: 400px;
+}
+
 h2 {
   margin-bottom: 30px;
   font-size: 24px;

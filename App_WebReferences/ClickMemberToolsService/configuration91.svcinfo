@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="gOb4wKnQLvGaKnBxDaStEPf9cbw=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="HRQ+cTR2H7r6ynNp/xdyl8Bs7VI=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ClickMemberToolsServiceSoap">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ClickMemberToolsServiceSoap" contract="ClickMemberToolsService.ClickMemberToolsServiceSoap" bindingType="basicHttpBinding" address="http://27.254.94.6/ClickService/clickMemberToolsService/ClickMemberToolsService.asmx" bindingConfiguration="ClickMemberToolsServiceSoap">
+    <endpoint name="ClickMemberToolsServiceSoap" contract="ClickMemberToolsService.ClickMemberToolsServiceSoap" bindingType="basicHttpBinding" address="http://localhost:8732/clickMemberToolsService/ClickMemberToolsService.asmx" bindingConfiguration="ClickMemberToolsServiceSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://27.254.94.6/ClickService/clickMemberToolsService/ClickMemberToolsService.asmx</serializedValue>
+          <serializedValue>http://localhost:8732/clickMemberToolsService/ClickMemberToolsService.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
