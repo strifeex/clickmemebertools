@@ -46,9 +46,45 @@ body{
     color: #53B2C8;
 }
 .Userlist{
-    width: 400px;
+    width: 500px;
 }
-h2 		 { 
+.Userlist ul{
+    margin-bottom: 16px;
+}
+.Userlist li{
+    display: inline-block;
+}
+//.usertable li{
+//    float: left;
+//    margin-left: 6px;
+//    margin-right: 6px;
+//}
+.NoData{
+    width: 10%;
+}
+.usernameData{
+    width: 25%;
+}
+.FnameData{
+    width: 30%;
+}
+.LnameData{
+    width: 25%;
+}
+.clickPriv{
+    width: 5%;
+    cursor: pointer;
+}
+.Privmanage ul{
+    margin-bottom: 16px;
+}
+.Privmanage li{
+    display: inline-block;
+}
+.Privmanage input{
+    width:auto;
+}
+h2{ 
   //text-align:center; 
   margin-bottom:30px; 
   font-size: 24px;

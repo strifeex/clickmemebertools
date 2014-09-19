@@ -132,32 +132,42 @@
   
       <h2>User List<small></small></h2>
   
-     <form>  
-            <ul class="tabletitle">
-                   <li>USERNAME</li>
-                   <li>EMAIL</li>
-                   <li>FIRSTNAME</li>
-                   <li>LASTNAME</li>
-                   <li>DATECREATE</li>
-                   <li>MOBILE</li>
-                   <li>ID NUMBER</li>
-                   <li>LAST LOGIN</li>
-            </ul>
-            <ul class="tablevalues">
-                   <li>USERNAME</li>
-                   <li>EMAIL</li>
-                   <li>FIRSTNAME</li>
-                   <li>LASTNAME</li>
-                   <li>DATECREATE</li>
-                   <li>MOBILE</li>
-                   <li>ID NUMBER</li>
-                   <li>LAST LOGIN</li>
-            </ul>
+      <form>
+        <div class="usertable" id="UserList">
+        <ul>
+            <li class="NoData">No</li><li class="usernameData">Username</li><li class="FnameData">Fistname</li><li class="LnameData">Latsname</li>
+        </ul>
+        </div>
       </form>
 
       <p class="footer">
         <div class="action_btns">
-            &nbsp;
+             &nbsp;
+	    </div>
+      </p>
+
+    </div>
+
+
+    <div class="formcontainer Privmanage">
+  
+      <h2 id="PrivmanageHead">header<small></small></h2>
+  
+      <form>
+         <ul>
+            <li><input type="checkbox" id="RenewCheck"></li><li>Renew Password</li>
+        </ul>
+        <ul>
+            <li><input type="checkbox" id="RollbackCheck"></li><li>Rollback Password</li>
+        </ul>
+
+        <input type="hidden" id="tmpCMSId" value="0">
+      </form>
+
+
+      <p class="footer">
+        <div class="action_btns">
+            <button class="ripple" onclick="MemberToolsPaivilege()">ACCEPT</button>
 	    </div>
       </p>
 
@@ -190,15 +200,16 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script language="JavaScript" type="text/javascript" charset="utf-8">
 
-
-
         $('.rollbackform').hide();
         $('.renewform').hide();
         $('.userinfoform').hide();
-        
+        $('.Userlist').hide();
+        $('.Privmanage').hide();
+
         var renewParams = {};
         var rollbackParams = {};
         var searchParams = {};
+        var PrivilegeParams = {};
 
         function RenewPassword() {
 
@@ -279,9 +290,7 @@
 
                 $.post("searchprocess.aspx", searchParams,
                 function (data, status) {
-                    //console.log("click update=------->");
-                    //console.log(data);
-                    //alert(data.responseStat);
+
                     if (data.responseStat == "OK") {
 
                         $('.userinfoform').show();
@@ -315,24 +324,113 @@
                 $.post("userlistprocess.aspx", ListParams,
                 function (data, status) {
 
-                    if (data.length > 0) {
+                    var dataLen = data.length;
 
-                        //                        $('.userinfoform').show();
-                        alert("found");
+                    if (dataLen > 0) {
+
+                        var UserList = document.getElementById('UserList');
+
+                        while (dataLen > 0) {
+
+                            dataLen -= 1;
+                            UserList.innerHTML += "<ul>";
+                            UserList.innerHTML += "<li class='NoData'>" + data[dataLen].No + "&nbsp</li>";
+                            UserList.innerHTML += "<li class='usernameData'>" + data[dataLen].userName + "&nbsp</li>";
+                            UserList.innerHTML += "<li class='FnameData'>" + data[dataLen].firstName + "&nbsp</li>";
+                            UserList.innerHTML += "<li class='LnameData'>" + data[dataLen].lastName + "&nbsp</li>";
+                            UserList.innerHTML += "<li class='clickPriv'><a class='gn-icon gn-icon-article' onclick='EditPrivilege(" + data[dataLen].userId + ", \"" + data[dataLen].userName + "\")'></a></li>";
+                            UserList.innerHTML += "</ul>";
+                        }
 
                     }
                     else {
-//                        $('.userinfoform').hide();
-                        alert("username not found");
+                        //alert("username not found");
                     }
 
                 }, "json");
+            }
+
+            function EditPrivilege(paramId, paramName) {
+
+                PrivilegeParams['cmsId'] = paramId;
+
+                $.post("getprivilegeprocess.aspx", PrivilegeParams,
+                    function (data, status) {
+
+                        if (data.resRenewMenu == "1") {
+
+                            document.getElementById("RenewCheck").checked = true;
+
+                        }
+
+                        if (data.resRollbackMenu == "1") {
+
+                            document.getElementById("RollbackCheck").checked = true;
+
+                        }
+
+                    }, "json");
+                
+
+                document.getElementById("PrivmanageHead").innerHTML = paramName;
+                document.getElementById("tmpCMSId").value = paramId;
+                $('.Userlist').hide();
+                $('.Privmanage').show();
+            }
+
+            function MemberToolsPaivilege() {
+
+//                var iclickId = document.getElementById('re_clickId');
+//                var irenewpw = document.getElementById('re_clickPw');
+
+//                renewParams['clickId'] = iclickId.value;
+//                renewParams['renewpw'] = irenewpw.value;
+
+//                $.post("resetpass.aspx", renewParams,
+//                    function (data, status) {
+//                        //console.log("click update=------->");
+//                        //console.log(data);
+//                        alert(data.responseStat);
+
+//                        //                    if (data.responseStat == "OK") {
+
+//                        //                        alert('renew password complete');
+//                        //                        //window.location.href = "thankpage.aspx";
+
+//                        //                    } else if (data.responseStat == "NO_USER") {
+
+//                        //                        alert('NOT FOUND USER');
+//                        //                        //window.location.href = "";
+
+//                        //                    } else if (data.responseStat == "MANY_ROWS") {
+
+//                        //                        alert('USER NOT UNIQUE');
+//                        //                        //window.location.href = "";
+//                        //                    }
+//                        //                    else {
+//                        //                        alert('ERROR');
+//                        //                        //window.location.href = "";
+//                        //                    }
+
+//                    }, "json");
+//                }
+
+
+                document.getElementById("RenewCheck").checked = false;
+                document.getElementById("RollbackCheck").checked = false;
+
+                $('.Privmanage').hide();
+                $('.Userlist').show();
+
+                alert(document.getElementById("tmpCMSId").value);
             }
 
             function RenewMenu() {
                 $('.searchform').hide();
                 $('.rollbackform').hide();
                 $('.userinfoform').hide();
+                $('.Userlist').hide();
+                $('.Privmanage').hide();
                 $('.renewform').show();
                 
             }
@@ -342,6 +440,8 @@
                 $('.searchform').hide();
                 $('.renewform').hide();
                 $('.userinfoform').hide();
+                $('.Userlist').hide();
+                $('.Privmanage').hide();
                 $('.rollbackform').show();
             }
 
@@ -349,8 +449,25 @@
                 $('.renewform').hide();
                 $('.rollbackform').hide();
                 $('.userinfoform').hide();
+                $('.Userlist').hide();
+                $('.Privmanage').hide();
                 $('.searchform').show();
             }
+
+            function PrivilegeMenu() {
+                $('.renewform').hide();
+                $('.rollbackform').hide();
+                $('.userinfoform').hide();
+                $('.searchform').hide();
+                $('.Privmanage').hide();
+
+                UserCMSList();
+
+                $('.Userlist').show();
+            }
+
+
+
 
     </script>
 </body>

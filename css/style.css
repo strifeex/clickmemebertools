@@ -48,7 +48,48 @@ body {
 }
 
 .Userlist {
-  width: 400px;
+  width: 500px;
+}
+
+.Userlist ul {
+  margin-bottom: 16px;
+}
+
+.Userlist li {
+  display: inline-block;
+}
+
+.NoData {
+  width: 10%;
+}
+
+.usernameData {
+  width: 25%;
+}
+
+.FnameData {
+  width: 30%;
+}
+
+.LnameData {
+  width: 25%;
+}
+
+.clickPriv {
+  width: 5%;
+  cursor: pointer;
+}
+
+.Privmanage ul {
+  margin-bottom: 16px;
+}
+
+.Privmanage li {
+  display: inline-block;
+}
+
+.Privmanage input {
+  width: auto;
 }
 
 h2 {

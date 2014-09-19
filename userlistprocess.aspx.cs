@@ -19,23 +19,23 @@ public partial class userlistprocess : System.Web.UI.Page
 
         ClickMemberToolsService.UserCMSDataList resCMSuser = Clicktoolservice.UserCMSList();
         int ResLength = resCMSuser.UserCMSListResult.Length;
-        int count = 0;
+        
         if (ResLength >= 1)
         {
             Response.Write("[");
-            while (count < ResLength)
+            while (ResLength > 0)
             {
-                Response.Write("{ \"No\":\"" + resCMSuser.UserCMSListResult[count].No + "\", ");
-                Response.Write("\"userId\":\"" + resCMSuser.UserCMSListResult[count].userId + "\", ");
-                Response.Write("\"userName\":\"" + resCMSuser.UserCMSListResult[count].userName + "\", ");
-                Response.Write("\"userPwd\":\"" + resCMSuser.UserCMSListResult[count].userPwd + "\", ");
-                Response.Write("\"firstName\":\"" + resCMSuser.UserCMSListResult[count].firstName + "\", ");
-                Response.Write("\"lastName\":\"" + resCMSuser.UserCMSListResult[count].lastName + "\" ");
+                ResLength -= 1;
+
+                Response.Write("{ \"No\":\"" + resCMSuser.UserCMSListResult[ResLength].No + "\", ");
+                Response.Write("\"userId\":\"" + resCMSuser.UserCMSListResult[ResLength].userId + "\", ");
+                Response.Write("\"userName\":\"" + resCMSuser.UserCMSListResult[ResLength].userName + "\", ");
+                Response.Write("\"userPwd\":\"" + resCMSuser.UserCMSListResult[ResLength].userPwd + "\", ");
+                Response.Write("\"firstName\":\"" + resCMSuser.UserCMSListResult[ResLength].firstName + "\", ");
+                Response.Write("\"lastName\":\"" + resCMSuser.UserCMSListResult[ResLength].lastName + "\" ");
                 Response.Write("}");
 
-                count++;
-
-                if (count < ResLength)
+                if (ResLength > 0)
                 {
                     Response.Write(",");
                 }

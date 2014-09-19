@@ -292,6 +292,21 @@
           <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CheckPrivilege">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cmsId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPrivilegeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPrivilegeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ClickMemberLogin_testSoapIn">
@@ -360,6 +375,12 @@
   <wsdl:message name="UserCMSListSoapOut">
     <wsdl:part name="parameters" element="tns:UserCMSListResponse" />
   </wsdl:message>
+  <wsdl:message name="CheckPrivilegeSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPrivilege" />
+  </wsdl:message>
+  <wsdl:message name="CheckPrivilegeSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPrivilegeResponse" />
+  </wsdl:message>
   <wsdl:portType name="ClickMemberToolsServiceSoap">
     <wsdl:operation name="ClickMemberLogin_test">
       <wsdl:input message="tns:ClickMemberLogin_testSoapIn" />
@@ -404,6 +425,10 @@
     <wsdl:operation name="UserCMSList">
       <wsdl:input message="tns:UserCMSListSoapIn" />
       <wsdl:output message="tns:UserCMSListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPrivilege">
+      <wsdl:input message="tns:CheckPrivilegeSoapIn" />
+      <wsdl:output message="tns:CheckPrivilegeSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ClickMemberToolsServiceSoap" type="tns:ClickMemberToolsServiceSoap">
@@ -507,6 +532,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CheckPrivilege">
+      <soap:operation soapAction="http://tempuri.org/CheckPrivilege" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ClickMemberToolsServiceSoap12" type="tns:ClickMemberToolsServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -602,6 +636,15 @@
     </wsdl:operation>
     <wsdl:operation name="UserCMSList">
       <soap12:operation soapAction="http://tempuri.org/UserCMSList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPrivilege">
+      <soap12:operation soapAction="http://tempuri.org/CheckPrivilege" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
