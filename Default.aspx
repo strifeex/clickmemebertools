@@ -134,9 +134,6 @@
   
       <form>
         <div class="usertable" id="UserList">
-        <ul>
-            <li class="NoData">No</li><li class="usernameData">Username</li><li class="FnameData">Fistname</li><li class="LnameData">Latsname</li>
-        </ul>
         </div>
       </form>
 
@@ -167,7 +164,7 @@
 
       <p class="footer">
         <div class="action_btns">
-            <button class="ripple" onclick="MemberToolsPaivilege()">ACCEPT</button>
+            <button class="ripple" onclick="MemberToolsPrivilege()">ACCEPT</button>
 	    </div>
       </p>
 
@@ -330,6 +327,13 @@
 
                         var UserList = document.getElementById('UserList');
 
+                            UserList.innerHTML = "<ul>";
+                            UserList.innerHTML += "<li class='NoData'>No</li>";
+                            UserList.innerHTML += "<li class='usernameData'>Username</li>";
+                            UserList.innerHTML += "<li class='FnameData'>Fistname</li>";
+                            UserList.innerHTML += "<li class='LnameData'>Latsname</li>";
+                            UserList.innerHTML += "</ul>";
+
                         while (dataLen > 0) {
 
                             dataLen -= 1;
@@ -351,6 +355,9 @@
             }
 
             function EditPrivilege(paramId, paramName) {
+
+                document.getElementById("RenewCheck").checked = false;
+                document.getElementById("RollbackCheck").checked = false;
 
                 PrivilegeParams['cmsId'] = paramId;
 
@@ -374,46 +381,51 @@
 
                 document.getElementById("PrivmanageHead").innerHTML = paramName;
                 document.getElementById("tmpCMSId").value = paramId;
+
                 $('.Userlist').hide();
                 $('.Privmanage').show();
             }
 
-            function MemberToolsPaivilege() {
+            function MemberToolsPrivilege() {
 
-//                var iclickId = document.getElementById('re_clickId');
-//                var irenewpw = document.getElementById('re_clickPw');
+                var cmsIdtmp = document.getElementById('tmpCMSId');
+                PrivilegeParams['cmsId'] = cmsIdtmp.value;
+                PrivilegeParams['renewCheck'] = "0";
+                PrivilegeParams['rollbackCheck'] = "0";
 
-//                renewParams['clickId'] = iclickId.value;
-//                renewParams['renewpw'] = irenewpw.value;
+                if(document.getElementById("RenewCheck").checked == true){
+                    PrivilegeParams['renewCheck'] = "1";
+                }
 
-//                $.post("resetpass.aspx", renewParams,
-//                    function (data, status) {
-//                        //console.log("click update=------->");
-//                        //console.log(data);
-//                        alert(data.responseStat);
+                if (document.getElementById("RollbackCheck").checked == true) {
 
-//                        //                    if (data.responseStat == "OK") {
+                    PrivilegeParams['rollbackCheck'] = "1";
+                }
 
-//                        //                        alert('renew password complete');
-//                        //                        //window.location.href = "thankpage.aspx";
+                $.post("editPrivilegeprocess.aspx", PrivilegeParams,
+                    function (data, status) {
 
-//                        //                    } else if (data.responseStat == "NO_USER") {
+                        //                    if (data.responseStat == "OK") {
 
-//                        //                        alert('NOT FOUND USER');
-//                        //                        //window.location.href = "";
+                        //                        alert('renew password complete');
+                        //                        //window.location.href = "thankpage.aspx";
 
-//                        //                    } else if (data.responseStat == "MANY_ROWS") {
+                        //                    } else if (data.responseStat == "NO_USER") {
 
-//                        //                        alert('USER NOT UNIQUE');
-//                        //                        //window.location.href = "";
-//                        //                    }
-//                        //                    else {
-//                        //                        alert('ERROR');
-//                        //                        //window.location.href = "";
-//                        //                    }
+                        //                        alert('NOT FOUND USER');
+                        //                        //window.location.href = "";
 
-//                    }, "json");
-//                }
+                        //                    } else if (data.responseStat == "MANY_ROWS") {
+
+                        //                        alert('USER NOT UNIQUE');
+                        //                        //window.location.href = "";
+                        //                    }
+                        //                    else {
+                        //                        alert('ERROR');
+                        //                        //window.location.href = "";
+                        //                    }
+
+                    }, "json");
 
 
                 document.getElementById("RenewCheck").checked = false;
@@ -421,8 +433,6 @@
 
                 $('.Privmanage').hide();
                 $('.Userlist').show();
-
-                alert(document.getElementById("tmpCMSId").value);
             }
 
             function RenewMenu() {

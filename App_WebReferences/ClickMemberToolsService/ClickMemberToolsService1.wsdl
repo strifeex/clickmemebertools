@@ -254,6 +254,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="MemberToolsPrivillegeDel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cmsId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberToolsPrivillegeDelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberToolsPrivillegeDelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="UserCMSList">
         <s:complexType />
       </s:element>
@@ -369,6 +384,12 @@
   <wsdl:message name="MemberToolsPrivillegeAddSoapOut">
     <wsdl:part name="parameters" element="tns:MemberToolsPrivillegeAddResponse" />
   </wsdl:message>
+  <wsdl:message name="MemberToolsPrivillegeDelSoapIn">
+    <wsdl:part name="parameters" element="tns:MemberToolsPrivillegeDel" />
+  </wsdl:message>
+  <wsdl:message name="MemberToolsPrivillegeDelSoapOut">
+    <wsdl:part name="parameters" element="tns:MemberToolsPrivillegeDelResponse" />
+  </wsdl:message>
   <wsdl:message name="UserCMSListSoapIn">
     <wsdl:part name="parameters" element="tns:UserCMSList" />
   </wsdl:message>
@@ -421,6 +442,10 @@
     <wsdl:operation name="MemberToolsPrivillegeAdd">
       <wsdl:input message="tns:MemberToolsPrivillegeAddSoapIn" />
       <wsdl:output message="tns:MemberToolsPrivillegeAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberToolsPrivillegeDel">
+      <wsdl:input message="tns:MemberToolsPrivillegeDelSoapIn" />
+      <wsdl:output message="tns:MemberToolsPrivillegeDelSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="UserCMSList">
       <wsdl:input message="tns:UserCMSListSoapIn" />
@@ -516,6 +541,15 @@
     </wsdl:operation>
     <wsdl:operation name="MemberToolsPrivillegeAdd">
       <soap:operation soapAction="http://tempuri.org/MemberToolsPrivillegeAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberToolsPrivillegeDel">
+      <soap:operation soapAction="http://tempuri.org/MemberToolsPrivillegeDel" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -627,6 +661,15 @@
     </wsdl:operation>
     <wsdl:operation name="MemberToolsPrivillegeAdd">
       <soap12:operation soapAction="http://tempuri.org/MemberToolsPrivillegeAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberToolsPrivillegeDel">
+      <soap12:operation soapAction="http://tempuri.org/MemberToolsPrivillegeDel" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
